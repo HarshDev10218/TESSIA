@@ -1,0 +1,28 @@
+# TESSIA — Personal AI Assistant, Research Partner & Adaptive Guide
+# Python 3.8+ Standard Library Only
+# No external pip dependencies required
+
+# This project uses Python standard library exclusively:
+# - json: Configuration and data serialization
+# - http.server: HTTP Server and API routes
+# - urllib: HTTP requests and API communication
+# - hashlib: Password hashing and data integrity
+# - sqlite3: Local knowledge graph and memory persistence
+# - os: Environment variables and file system access
+# - pathlib: Cross-platform file path handling
+# - re: Text parsing and pattern matching
+# - datetime: Time tracking and memory versioning
+# - collections: Data structure utilities
+# - argparse: CLI argument parsing
+# - logging: Application logging
+
+# Optional Runtime Dependencies (install separately if using):
+# - ollama: Local LLM inference (https://ollama.ai/)
+# - elevenlabs: Text-to-speech API (if ELEVENLABS_API_KEY is configured)
+
+# Optional Development Dependencies:
+# - pytest: Unit testing framework
+# - black: Code formatting
+# - pylint: Code linting
+
+echo "No pip packages required. TESSIA uses Python standard library only."
