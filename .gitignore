@@ -1,0 +1,17 @@
+# Environment & Secrets
+.env
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# Persistent User Memory (Keep local)
+memory/*.md
+!memory/.gitkeep
+
+# Operating System Files
+.DS_Store
+Thumbs.db
