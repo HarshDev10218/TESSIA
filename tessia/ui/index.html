@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>TESSIA HUD</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Top HUD Header -->
+    <header class="header-hud">
+      <div class="brand">
+        <span class="brand-title">TESSIA</span>
+        <span class="brand-sub">RESEARCH ENGINE</span>
+      </div>
+      <div class="header-actions">
+        <button class="pill-btn" onclick="triggerBriefing()">Briefing</button>
+        <div class="status-badge" id="status-indicator">
+          <span class="status-dot"></span> <span id="status-text">OLLAMA LIVE</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Floating System Error / Alert Toast -->
+    <div class="error-toast" id="error-toast" onclick="dismissToast()">
+      <span class="toast-icon">⚠️</span>
+      <span class="toast-message" id="toast-message">System Alert</span>
+      <button class="toast-close">&times;</button>
+    </div>
+
+    <!-- Centered Visualizer: Rotating Morphing Blob + Neural Canvas -->
+    <div class="neural-center-wrapper">
+      <div class="rotating-blob" id="core-blob"></div>
+      <canvas id="neural-canvas"></canvas>
+    </div>
+
+    <!-- Scrollable Chat Feed Overlay -->
+    <div class="response-overlay" id="chat-feed">
+      <div class="chat-bubble assistant">
+        Hello Harshith. TESSIA is online with local Ollama, mail, calendar, and research tools connected.
+      </div>
+    </div>
+
+    <!-- Bottom Mobile-Optimized Ask Bar -->
+    <div class="ask-bar-container">
+      <form class="ask-form" id="ask-form" onsubmit="event.preventDefault(); sendQuery();">
+        <button type="button" class="icon-btn secondary-btn" id="mic-btn" onclick="toggleVoiceInput()" title="Voice Input">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+            <line x1="12" y1="19" x2="12" y2="23"></line>
+            <line x1="8" y1="23" x2="16" y2="23"></line>
+          </svg>
+        </button>
+        
+        <input 
+          type="text" 
+          id="user-input" 
+          class="ask-input" 
+          placeholder="Ask TESSIA or command tool..." 
+          autocomplete="off"
+        />
+        
+        <button type="submit" class="icon-btn primary-btn" aria-label="Send">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
